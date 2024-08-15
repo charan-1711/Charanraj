@@ -10,6 +10,7 @@
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
   --default-color: #444444; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #151515; /* Color for headings, subheadings and title throughout the website */
+  --link-color:#044efa;
   --accent-color: #ffc451; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #312f2f; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
@@ -55,14 +56,14 @@ body {
 }
 
 a {
-  color: var(--accent-color);
+  color: var(--link-color);
   text-decoration: none;
   transition: 0.3s;
 }
 
 a:hover {
-  color: color-mix(in srgb, var(--accent-color), transparent 25%);
-  text-decoration: none;
+  /* color: color-mix(in srgb, var(--accent-color), transparent 25%); */
+  /* text-decoration: underline; */
 }
 
 h1,
@@ -73,58 +74,6 @@ h5,
 h6 {
   color: var(--heading-color);
   font-family: var(--heading-font);
-}
-
-/* PHP Email Form Messages
-------------------------------*/
-.php-email-form .error-message {
-  display: none;
-  background: #df1529;
-  color: #ffffff;
-  text-align: left;
-  padding: 15px;
-  margin-bottom: 24px;
-  font-weight: 600;
-}
-
-.php-email-form .sent-message {
-  display: none;
-  color: #ffffff;
-  background: #059652;
-  text-align: center;
-  padding: 15px;
-  margin-bottom: 24px;
-  font-weight: 600;
-}
-
-.php-email-form .loading {
-  display: none;
-  background: var(--surface-color);
-  text-align: center;
-  padding: 15px;
-  margin-bottom: 24px;
-}
-
-.php-email-form .loading:before {
-  content: "";
-  display: inline-block;
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  margin: 0 10px -6px 0;
-  border: 3px solid var(--accent-color);
-  border-top-color: var(--surface-color);
-  animation: php-email-form-loading 1s linear infinite;
-}
-
-@keyframes php-email-form-loading {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
 }
 
 /*--------------------------------------------------------------
@@ -344,7 +293,7 @@ h6 {
     padding: 10px 0;
     margin: 0;
     border-radius: 6px;
-    background-color: var(--nav-mobile-background-color);
+    /* background-color: var(--nav-mobile-background-color); */
     overflow-y: auto;
     transition: 0.3s;
     z-index: 9998;
@@ -353,7 +302,9 @@ h6 {
 
   .navmenu a,
   .navmenu a:focus {
-    color: var(--nav-dropdown-color);
+    color:white;
+    text-decoration: none;;
+    /* color: var(--nav-dropdown-color); */
     padding: 10px 20px;
     font-family: var(--nav-font);
     font-size: 17px;
@@ -972,7 +923,7 @@ section,
 /*--------------------------------------------------------------
 # projects Section
 --------------------------------------------------------------*/
-.projects .projects-filters {
+/* .projects .projects-filters {
   padding: 0;
   margin: 0 auto 20px auto;
   list-style: none;
@@ -1005,7 +956,7 @@ section,
 
 .projects .projects-filters li:last-child {
   margin-right: 0;
-}
+} */
 
 @media (max-width: 575px) {
   .projects .projects-filters li {
@@ -1070,6 +1021,20 @@ section,
   bottom: 0;
 }
 
+.projects-social-links{
+  background-color: red;
+  margin-left: 50px;
+  justify-self: start;
+  padding-left: 80px;
+  justify-content:space-around;
+}
+
+.img-fluid{
+  max-width:50%;
+  height:auto;
+  border-radius: 20px;
+}
+
 /*--------------------------------------------------------------
 # certifications Section
 --------------------------------------------------------------*/
@@ -1129,16 +1094,32 @@ section,
   font-size: 18px;
 }
 
+.view{
+  color:var(--link-color);
+}
+
+.view:hover{
+  text-decoration: underline;
+}
+
 .certifications .certifications-member .member-info span {
   display: block;
   font-size: 13px;
   font-weight: 400;
-  color: color-mix(in srgb, var(--default-color), transparent 40%);
+  /* color: color-mix(in srgb, var(--default-color), transparent 40%); */
 }
 
 .certifications .certifications-member:hover .social {
   opacity: 1;
   bottom: 15px;
+}
+
+.leet{
+  background-image: url('http://127.0.0.1:5500/assets/img/leetcode.svg');
+  background-color: var(--accent-color);
+  width: 50px;
+  border-radius: 5px;
+  margin-left: 30px;
 }
 
 /*--------------------------------------------------------------
